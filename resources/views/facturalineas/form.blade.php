@@ -34,17 +34,17 @@
 <br>
 
 <label for="precio">Precio</label>
-<input type="number" name="precio" id="precio" maxlength="100" class="form-control" value="{{ isset($facturalinea->precio) ? $facturalinea->precio : old('precio') }}" @if (isset($readonly)) {{ $readonly }} @endif>
+<input type="number" name="precio" id="precio" maxlength="100" class="form-control" value="{{ isset($facturalinea->precio) ? $facturalinea->precio : old('precio') }}" readonly>
 
 <br>
 
 <label for="base">Base</label>
-<input type="number" name="base" id="base" maxlength="100" class="form-control" value="{{ isset($facturalinea->base) ? $facturalinea->base : old('base') }}" @if (isset($readonly)) {{ $readonly }} @endif>
+<input type="number" name="base" id="base" maxlength="100" class="form-control" value="{{ isset($facturalinea->base) ? $facturalinea->base : old('base') }}" readonly >
 
 <br>
 
 <label for="iva">IVA</label>
-<input type="number" name="iva" id="iva" maxlength="100" class="form-control" value="{{ isset($facturalinea->iva) ? $facturalinea->iva : old('iva') }}" @if (isset($readonly)) {{ $readonly }} @endif>
+<input type="number" name="iva" id="iva" maxlength="100" class="form-control" value="{{ isset($facturalinea->iva) ? $facturalinea->iva : old('iva') }}"  readonly>
 
 
 <br>
