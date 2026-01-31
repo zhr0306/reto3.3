@@ -26,11 +26,8 @@
             <td>{{$facturalinea->codigo}}</td>
             <td>{{$facturalinea->cantidad}}</td>
 
-            @if (isset($facturalineasfactura))
+          
             <td>{{$facturalinea->numero}}</td>
-            @else
-            <td>{{$facturalinea->factura->numero}}</td>
-            @endif
 
             <td>{{$facturalinea->descripcion}}</td>
             <td>{{$facturalinea->precio}}</td>

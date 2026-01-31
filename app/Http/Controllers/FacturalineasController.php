@@ -78,7 +78,7 @@ class FacturalineasController extends Controller
 
         Facturalineas::where('id', '=', $id)->update($datos);
 
-        return redirect('facturalineas')->with('mensaje', "Línea factura modificada");
+        return redirect('facturalineasfactura')->with('mensaje', "Línea factura modificada");
     
     }
 
@@ -90,21 +90,15 @@ class FacturalineasController extends Controller
         //
         Facturalineas::destroy($id);
 
-        return redirect('facturalineas')->with('mensaje', "Línea factura borrada");
+        return redirect('facturalineasfactura')->with('mensaje', "Línea factura borrada");
     }
 
 
     public function facturalineasfactura($id_factura) {
-        $facturalineas = DB::table('facturalineas')
-                        ->join('facturas', 'facturalineas.id_factura', '=', 'facturas.id')
-                        ->select('facturalineas.*', 'facturas.numero')
-                        ->where('facturalineas.id_factura', '=', $id_factura)
-                        ->orderBy('id')
-                        ->cursorPaginate(10);
-        
-        $facturalineasfactura = true;
+       $facturaslineas = FacturasLineas::where('id_factura', $id_factura)->paginate(10);
+    
 
-        return view('facturalineas.index', compact('facturalineas', 'facturalineasfactura'));
+    return view('facturaslineas.index', compact('facturaslineas'));
     }
     
 }
