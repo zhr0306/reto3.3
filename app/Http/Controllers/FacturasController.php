@@ -75,7 +75,7 @@ class FacturasController extends Controller
 
         Facturas::where('id', '=', $id)->update($datos);
 
-        return redirect('facturas')->with('mensaje', "Factura modificada");
+        return redirect('facturas')->with('mensaje', "Factura modificada con exito ");
     }
 
     /**
